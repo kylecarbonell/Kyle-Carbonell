@@ -1,0 +1,102 @@
+:root{
+  --blue: #2B5D85;
+  --darkBlue : #254E70;
+  --white: whitesmoke;
+  --orange: #FFA552;
+
+  --BarHeight: 15%;
+  --HomeHeight: 100%;
+  --AboutHeight: 75%;
+  --ProjectsHeight: 100%;
+}
+
+.App-Structure{
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+/* 
+  display: flex;  
+  flex-direction: column; */
+
+  background-color: whitesmoke;
+}
+
+.Bar-Structure{
+  position: fixed;
+
+  height: var(--BarHeight);
+  width: 100%;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: visible;
+
+  top : -200px;
+
+  z-index:100;
+}
+
+
+.Content-Structure{
+  height: 100%;
+}
+
+.Home-Structure{
+  /* padding-top: var(--BarHeight); */
+  height: var(--HomeHeight);
+}
+
+.About-Structure{
+  height: var(--AboutHeight);
+  width:100%;
+}
+
+.Projects-Structure{
+  height: var(--ProjectsHeight);
+  width: 100%;
+  background-color: var(--blue);
+}
+
+/***************/
+
+@keyframes slideInDown {
+  from{
+    transform: translateY(-200px);
+  }
+  
+  to{
+    transform: translateY(200px);
+  }
+}
+
+@keyframes slideOutUp {
+  from{
+    transform: translateY(200px);
+  }
+  
+  to{
+    transform: translateY(-200px);
+  }
+}
+
+.showBeginner{
+  animation: slideInDown 2s ease 0s both;
+}
+
+.show{
+  animation: slideInDown 0.5s ease both;
+}
+
+.remove{
+  animation: slideOutUp 0.5s ease  both;
+}
+
+#Scrollable{
+  scroll-behavior: smooth;
+}
