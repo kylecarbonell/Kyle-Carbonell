@@ -1,0 +1,32 @@
+.Project-Image-Container {
+  height: 100%;
+  width: 100%;
+
+  /* background-color: black; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Project-Image {
+  height: 100%;
+  width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-color: var(--orange);
+  border-radius: 20px;
+}
+
+@keyframes SlideIn {
+  from {
+    transform: translateX(-200);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,80 @@
+.Projects-Container {
+  height: 100%;
+  width: 100%;
+  background-color: var(--blue);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Projects-Scroll {
+  width: 60%;
+  height: 10%;
+  background-color: var(--orange);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Projects-Images {
+  height: 70%;
+  width: 60%;
+  background-color: var(--orange);
+}
+
+.Projects-Images,
+.Projects-Scroll,
+.ProjectLink-Container {
+  border-radius: 20px;
+}
+
+.Title-Container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Arrow-Button,
+.Arrow-Button:enabled {
+  background-color: var(--white);
+  height: 80%;
+  width: 7%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+.Arrow-Button:active {
+  border: none;
+  outline: none;
+
+  background-color: var(--blue);
+}
+
+.ProjectLink-Container {
+  height: 6%;
+  width: 60%;
+  background-color: var(--orange);
+}
+
+#Arrow {
+  font-size: 4.5rem;
+  color: var(--blue);
+}
+
+#Arrow:active {
+  color: var(--orange);
+}
+
+#Title-Text {
+  font-size: 3rem;
+  color: var(--blue);
+}
