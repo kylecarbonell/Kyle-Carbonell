@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import ProjectImages from "./ProjectImages";
 
 function Projects() {
-  const projects = ["Jerky Republic", "P1", "Fire"];
+  const projects = ["Jerky Republic", "Library", "Fire"];
   //TESTSTSTSTS
   const images = [
     [
@@ -17,10 +17,19 @@ function Projects() {
       "JerkyRepublicAdmin1",
       "JerkyRepublicAdmin2",
     ],
-    [""],
+    [
+      "LibraryLogin",
+      "LibraryCreateAccount",
+      "LibraryBooks",
+      "LibraryYourBooks",
+      "LibraryWishList",
+      "LibraryPublishBook",
+    ],
+    ["NA"],
   ];
 
   const [name, setName] = useState("");
+  const [imageList, setImageList] = useState<string[]>([]);
   const projectIndex = useRef<number>(0);
   function scroll(dir: String) {
     if (dir == "left") {
@@ -37,8 +46,11 @@ function Projects() {
       }
     }
 
-    // console.log(projectIndex.current);
+    console.log(projectIndex.current);
     setName(projects[projectIndex.current]);
+    setImageList(images[projectIndex.current]);
+
+    console.log(imageList);
   }
 
   return (
@@ -61,6 +73,7 @@ function Projects() {
             className="Arrow-Button"
             onClick={() => {
               scroll("right");
+              console.log(name);
             }}
           >
             <FaLongArrowAltRight id="Arrow" />
@@ -68,7 +81,9 @@ function Projects() {
         </div>
         <div className="Projects-Images">
           {/* Image slide show component */}
-          <ProjectImages img={images[projectIndex.current]}></ProjectImages>
+          {images.map((list) => {
+            return <ProjectImages img={list} show={false}></ProjectImages>;
+          })}
         </div>
 
         <div className="ProjectLink-Container"></div>

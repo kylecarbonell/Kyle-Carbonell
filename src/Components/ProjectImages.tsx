@@ -3,6 +3,7 @@ import "./ProjectImages.css";
 
 interface Images {
   img: string[];
+  show: boolean;
 }
 
 function ProjectImages(props: Images) {
@@ -18,7 +19,7 @@ function ProjectImages(props: Images) {
       }
 
       console.log(props.img[index.current]);
-      console.log(index.current);
+      //   console.log(index.current);
 
       setImageName(props.img[index.current]);
     }, 3000);
