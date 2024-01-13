@@ -1,11 +1,13 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import ProjectImages from "./ProjectImages";
 
+import "./ProjectImages.css";
+
 function Projects() {
-  const projects = ["Jerky Republic", "Library", "Fire"];
+  const projects = ["Jerky Republic", "Library", "2D - Game"];
   //TESTSTSTSTS
   const images = [
     [
@@ -25,12 +27,17 @@ function Projects() {
       "LibraryWishList",
       "LibraryPublishBook",
     ],
-    ["NA"],
+    ["GameMain", "GameBattleMenu", "GameBattleStart"],
   ];
 
-  const [name, setName] = useState("");
-  const [imageList, setImageList] = useState<string[]>([]);
+  //Defines what project we are looking at
   const projectIndex = useRef<number>(0);
+  const imageIndex = useRef<number>(0);
+  const [name, setName] = useState(projects[projectIndex.current]);
+  const [imageList, setImageList] = useState<string[]>([]);
+
+  const [imageName, setImageName] = useState<string>("");
+
   function scroll(dir: String) {
     if (dir == "left") {
       if (projectIndex.current > 0) {
@@ -45,13 +52,37 @@ function Projects() {
         projectIndex.current = 0;
       }
     }
-
-    console.log(projectIndex.current);
+    // console.log(projectIndex.current);
     setName(projects[projectIndex.current]);
     setImageList(images[projectIndex.current]);
+    setImageName(images[projectIndex.current][0]);
 
     console.log(imageList);
   }
+
+  useEffect(() => {
+    imageIndex.current = 0;
+  }, [projectIndex]);
+
+  useEffect(() => {
+    imageIndex.current = 0;
+    const slideShow = setInterval(() => {
+      if (imageIndex.current == images[projectIndex.current].length - 1) {
+        imageIndex.current = 0;
+      } else {
+        imageIndex.current += 1;
+      }
+
+      // console.log("PROJ" + projectIndex.current);
+      // console.log("IMG" + imageIndex.current);
+      // console.log(imageName);
+      setImageName(images[projectIndex.current][imageIndex.current]);
+    }, 3000);
+
+    return () => {
+      clearInterval(slideShow);
+    };
+  }, []);
 
   return (
     <>
@@ -80,10 +111,16 @@ function Projects() {
           </button>
         </div>
         <div className="Projects-Images">
-          {/* Image slide show component */}
-          {images.map((list) => {
-            return <ProjectImages img={list} show={false}></ProjectImages>;
-          })}
+          <div className="Project-Image-Container">
+            <span
+              className="Project-Image"
+              style={{
+                backgroundImage: `url('src/assets/Projects/${imageName}.png')`,
+              }}
+            ></span>
+          </div>
+
+          <div></div>
         </div>
 
         <div className="ProjectLink-Container"></div>
