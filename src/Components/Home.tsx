@@ -1,8 +1,6 @@
 import "../App.css";
 import "./Home.css";
-import { Ref } from "react";
 import { CiInstagram, CiLinkedin } from "react-icons/ci";
-import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 
 function Home() {

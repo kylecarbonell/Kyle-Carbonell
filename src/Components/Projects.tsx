@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 function Projects() {
   const projects = ["Jerky Republic", "Library", "2D - Game"];
