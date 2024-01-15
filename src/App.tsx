@@ -47,6 +47,9 @@ function App() {
       <div className="App-Structure">
         <div className="Bar-Structure">
           <Bar
+            home={() => {
+              goTo(homeRef);
+            }}
             about={() => {
               goTo(aboutRef);
             }}
@@ -69,6 +72,7 @@ function App() {
           <div className="Projects-Structure" ref={projectsRef}>
             <Projects></Projects>
           </div>
+
           {/* <div className='Home-Structure' ref={contactRef}><Home></Home></div> */}
         </div>
       </div>
