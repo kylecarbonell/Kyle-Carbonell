@@ -129,6 +129,13 @@ function Projects() {
                         ? { backgroundColor: "var(--blue)" }
                         : { backgroundColor: "var(--white)" }
                     }
+                    onClick={() => {
+                      imageIndex.current = key;
+                      setImageName(
+                        images[projectIndex.current][imageIndex.current]
+                      );
+                      console.log(imageIndex.current);
+                    }}
                   ></span>
                 );
               })}
