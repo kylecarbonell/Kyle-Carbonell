@@ -1,10 +1,4 @@
-import {
-  MutableRefObject,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { MutableRefObject, RefObject, useEffect, useRef } from "react";
 import "./App.css";
 import Bar from "./Components/Bar";
 import Home from "./Components/Home";
