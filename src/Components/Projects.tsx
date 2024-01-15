@@ -2,13 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import ProjectImages from "./ProjectImages";
-
-import "./ProjectImages.css";
+import { Link } from "react-router-dom";
 
 function Projects() {
   const projects = ["Jerky Republic", "Library", "2D - Game"];
-  //TESTSTSTSTS
+
   const images = [
     [
       "JerkyRepublicHome",
@@ -30,11 +28,12 @@ function Projects() {
     ["GameMain", "GameBattleMenu", "GameBattleStart"],
   ];
 
+  const links = ["jerky-republic", "Library", "2D-Game"];
+
   //Defines what project we are looking at
   const projectIndex = useRef<number>(0);
   const imageIndex = useRef<number>(0);
   const [name, setName] = useState(projects[projectIndex.current]);
-  const [imageList, setImageList] = useState<string[]>([]);
 
   const [imageName, setImageName] = useState<string>("");
 
@@ -45,19 +44,22 @@ function Projects() {
       } else {
         projectIndex.current = projects.length - 1;
       }
-    } else if (dir == "right") {
+    } else {
       if (projectIndex.current < projects.length - 1) {
         projectIndex.current += 1;
       } else {
         projectIndex.current = 0;
       }
     }
+
+    imageIndex.current = 0;
     // console.log(projectIndex.current);
     setName(projects[projectIndex.current]);
-    setImageList(images[projectIndex.current]);
     setImageName(images[projectIndex.current][0]);
+  }
 
-    console.log(imageList);
+  function openLink(link: string) {
+    window.open(`https://github.com/kylecarbonell/${link}`);
   }
 
   useEffect(() => {
@@ -73,9 +75,6 @@ function Projects() {
         imageIndex.current += 1;
       }
 
-      // console.log("PROJ" + projectIndex.current);
-      // console.log("IMG" + imageIndex.current);
-      // console.log(imageName);
       setImageName(images[projectIndex.current][imageIndex.current]);
     }, 3000);
 
@@ -118,12 +117,34 @@ function Projects() {
                 backgroundImage: `url('src/assets/Projects/${imageName}.png')`,
               }}
             ></span>
+            <div className="Image-Bubble-Container">
+              {images[projectIndex.current].map((val, key) => {
+                return (
+                  <span
+                    className="Image-Bubble"
+                    key={key}
+                    style={
+                      key == imageIndex.current
+                        ? { backgroundColor: "var(--blue)" }
+                        : { backgroundColor: "var(--white)" }
+                    }
+                  ></span>
+                );
+              })}
+            </div>
           </div>
-
-          <div></div>
         </div>
 
-        <div className="ProjectLink-Container"></div>
+        <div className="ProjectLink-Container">
+          <div
+            className="View-Code-Button"
+            onClick={() => {
+              openLink(links[projectIndex.current]);
+            }}
+          >
+            View Code
+          </div>
+        </div>
       </div>
     </>
   );

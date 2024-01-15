@@ -24,6 +24,9 @@
   height: 70%;
   width: 60%;
   background-color: var(--orange);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .Projects-Images,
@@ -59,10 +62,84 @@
   background-color: var(--blue);
 }
 
+.Picture-Number {
+  background-color: black;
+}
+
+.Project-Image-Container {
+  height: 100%;
+  width: 100%;
+
+  /* background-color: black; */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: black; */
+}
+
+.Project-Image {
+  height: 100%;
+  width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-color: var(--orange);
+  border-radius: 20px;
+}
+
+.Image-Bubble-Container {
+  background-color: var(--orange);
+  height: 5%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+}
+
+.Image-Bubble {
+  height: 50%;
+  width: 1.5%;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+
+  margin-right: 3%;
+}
+
 .ProjectLink-Container {
   height: 6%;
   width: 60%;
   background-color: var(--orange);
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.View-Code-Button {
+  background-color: var(--orange);
+
+  height: 100%;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: bold;
+
+  outline: none;
+  border: none;
 }
 
 #Arrow {
