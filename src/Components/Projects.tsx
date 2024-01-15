@@ -113,7 +113,7 @@ function Projects() {
             <img
               className="Project-Image"
               style={{
-                backgroundImage: `../assets/${imageName}.jpg')`,
+                backgroundImage: `url("../assets/${imageName}.jpg")')`,
               }}
             ></img>
             <div className="Image-Bubble-Container">
