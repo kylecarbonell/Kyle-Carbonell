@@ -116,7 +116,7 @@ function Projects() {
               //   backgroundImage: `url("../assets/Projects/GameBattleStart.jpg")')`,
               // }}
 
-              src={`src/assets/${imageName}.jpg`}
+              src={`public/${imageName}.jpg`}
             ></img>
             <div className="Image-Bubble-Container">
               {images[projectIndex.current].map((val, key) => {
