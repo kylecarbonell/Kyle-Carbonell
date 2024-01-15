@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-
+import "../assets/GameBattleStart.jpg";
 function Projects() {
   const projects = ["Jerky Republic", "Library", "2D - Game"];
 
@@ -112,9 +112,11 @@ function Projects() {
           <div className="Project-Image-Container">
             <img
               className="Project-Image"
-              style={{
-                backgroundImage: `url("../assets/${imageName}.jpg")')`,
-              }}
+              // style={{
+              //   backgroundImage: `url("../assets/Projects/GameBattleStart.jpg")')`,
+              // }}
+
+              src={`src/assets/${imageName}.jpg`}
             ></img>
             <div className="Image-Bubble-Container">
               {images[projectIndex.current].map((val, key) => {
