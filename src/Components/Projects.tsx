@@ -110,12 +110,10 @@ function Projects() {
         </div>
         <div className="Projects-Images">
           <div className="Project-Image-Container">
-            <span
+            <img
               className="Project-Image"
-              style={{
-                backgroundImage: `url('src/assets/Projects/${imageName}.png')`,
-              }}
-            ></span>
+              src={`src/assets/Projects/${imageName}.png`}
+            ></img>
             <div className="Image-Bubble-Container">
               {images[projectIndex.current].map((val, key) => {
                 return (
