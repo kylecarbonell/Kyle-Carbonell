@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import "../assets/GameBattleStart.jpg";
 function Projects() {
   const projects = ["Jerky Republic", "Library", "2D - Game"];
 
@@ -116,7 +115,7 @@ function Projects() {
               //   backgroundImage: `url("../assets/Projects/GameBattleStart.jpg")')`,
               // }}
 
-              src={`public/${imageName}.jpg`}
+              src={`/${imageName}.jpg`}
             ></img>
             <div className="Image-Bubble-Container">
               {images[projectIndex.current].map((val, key) => {
