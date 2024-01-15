@@ -122,6 +122,7 @@ function Projects() {
                   <span
                     className="Image-Bubble"
                     key={key}
+                    about={val}
                     style={
                       key == imageIndex.current
                         ? { backgroundColor: "var(--blue)" }
