@@ -24,9 +24,16 @@ function Projects() {
       "LibraryPublishBook",
     ],
     ["GameMain", "GameBattleMenu", "GameBattleStart"],
+    [
+      "CodeninjaMain",
+      "CodeninjaHome",
+      "CodeNinjaActivity1",
+      "CodeNinjaActivity2",
+      "CodeNinjaActivity3",
+    ],
   ];
 
-  const links = ["jerky-republic", "Library", "2D-Game"];
+  const links = ["jerky-republic", "Library", "2D-Game", "Codeninja"];
 
   //Defines what project we are looking at
   const projectIndex = useRef<number>(0);
